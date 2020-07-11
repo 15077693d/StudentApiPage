@@ -58,6 +58,12 @@ const renderStudents = i => {
     numberElement.innerHTML = students.length
 }
 
+const refreshRecord = ()=>{
+    setInterval(()=>{
+        getStudents();
+    },2000)
+}
+refreshRecord();
 getStudents();
 
 const nextElement = document.querySelector("#next")
@@ -65,8 +71,9 @@ const prevElement = document.querySelector("#prev")
 
 /* Student Record Listener */
 nextElement.addEventListener("click", () => {
-    if (page + 1 >= parseInt(students.length / 4)) {
-        renderStudents(parseInt(students.length / 4))
+    const max = Math.ceil(students.length/4)-1
+    if (page + 1 > max) {
+        renderStudents(max)
     } else {
         page += 1;
         renderStudents(page)
@@ -74,7 +81,7 @@ nextElement.addEventListener("click", () => {
 })
 
 prevElement.addEventListener("click", () => {
-    if (page - 1 <= 0) {
+    if (page - 1 < 0) {
         renderStudents(0)
     } else {
         page -= 1;
