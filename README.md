@@ -1,1 +1,1 @@
-# StudentApiPage
+web page for student registration

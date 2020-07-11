@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
+$light-green: #e8fcea;
+$dark-green: #5acec5;
+$yellow: #ffe76d;
+$red: #ef6869;
+$length: 400px;
+
+@mixin box {
+  height: $length;
+  width: $length;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+* {
+  font-family: "Roboto";
+  padding: 0;
+  margin: 0;
+  font-size: 40px;
+  font-weight: 500;
+  color: $dark-green;
+}
+input,
+select,
+option,
+button {
+    cursor: pointer;
+  &:focus {
+    outline: 0px;
+  }
+  padding: 5px;
+  font-size: 70%;
+  border: 0px;
+  width: 150px;
+  border-radius: 10px;
+}
+
+button {
+  width: 40px;
+}
+
+body {
+  background-color: $dark-green;
+}
+
+form,
+div {
+  border-radius: 20px;
+}
+
+header {
+  height: 180px;
+  background-color: $light-green;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  h1 {
+    position: relative;
+    bottom: 20px;
+    font-size: 50px;
+  }
+}
+
+section {
+  height: 600px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  #form {
+    #submit {
+      background-color: $light-green;
+      &:hover {
+        background-color: $dark-green;
+        color: $light-green;
+      }
+      &:active {
+        background-color: $light-green;
+        color: $dark-green;
+      }
+    }
+    div {
+      width: 75%;
+      display: flex;
+      justify-content: space-between;
+    }
+    background-color: $yellow;
+    @include box;
+  }
+
+  .record {
+    button {
+      &:hover {
+        background-color: white;
+      }
+      &:active {
+        background-color: $light-green;
+        color: $dark-green;
+      }
+    }
+    @include box;
+    justify-content: space-between;
+    h2,
+    span {
+      font-size: 60%;
+      color: white;
+    }
+    strong{
+        color: white;
+    }
+    h2 {
+      align-self: flex-start;
+    }
+    .students{
+        @include box;
+        justify-content: flex-start;
+    }
+    .title {
+      padding: 10px;
+      background-color: $red;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .row{
+        padding: 10px;
+        display: grid;
+        width: 100%;
+        grid-template-columns: 10% 38% 32% auto;
+        margin-top: 15px;
+        background-color: $yellow;
+        span{
+            color: $dark-green;
+        }
+        .name-text{
+            grid-column: 2/3;
+        }
+        .age-text{
+            grid-column: 3/4;
+        }
+        .sex-text{
+            grid-column: 4/5;
+        }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  section {
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
