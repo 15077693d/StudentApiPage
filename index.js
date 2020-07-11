@@ -1,7 +1,3 @@
-// action="https://student-api3.herokuapp.com/student"
-// method="post"
-// const saveStudent = 
-
 /* Student Form */
 const nameElement = document.querySelector('#name')
 const ageElement = document.querySelector('#age')
@@ -78,7 +74,7 @@ nextElement.addEventListener("click", () => {
 })
 
 prevElement.addEventListener("click", () => {
-    if (page - 1 < 0) {
+    if (page - 1 <= 0) {
         renderStudents(0)
     } else {
         page -= 1;
