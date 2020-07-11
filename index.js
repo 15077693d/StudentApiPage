@@ -65,7 +65,7 @@ const prevElement = document.querySelector("#prev")
 
 /* Student Record Listener */
 nextElement.addEventListener("click", () => {
-    if (page + 1 > parseInt(students.length / 4)) {
+    if (page + 1 >= parseInt(students.length / 4)) {
         renderStudents(parseInt(students.length / 4))
     } else {
         page += 1;
