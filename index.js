@@ -26,7 +26,7 @@ const saveStudent = () => {
 /* Student Form Listener */
 submitElement.addEventListener("click", (e) => {
     e.preventDefault();
-    saveStudent()
+    //saveStudent()
     nameElement.value = "";
     ageElement.value = "";
     sexElement.value = "";
